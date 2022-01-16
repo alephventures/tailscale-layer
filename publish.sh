@@ -7,7 +7,7 @@ MD5SUM=$(md5 -q "${LAYER}.zip")
 S3KEY="${LAYER}/${MD5SUM}"
 
 for region in "${REGIONS[@]}"; do
-  bucket_name="tailscale-layers-${region}"
+  bucket_name="aleph.tailscale-layers-${region}"
 
   echo "Publishing Lambda Layer ${LAYER} in region ${region}..."
   # Must use --cli-input-json so AWS CLI doesn't attempt to fetch license URL

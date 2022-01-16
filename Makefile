@@ -3,7 +3,6 @@ ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 all: tailscale
 
 init: 
-	./create_regions.sh 
 	./create_buckets.sh
 
 tailscale:
@@ -14,6 +13,9 @@ upload:
 
 publish: 
 	./publish.sh		
+
+unpublish: 
+	./unpublish.sh
 
 clean:
 	rm -f tailscale.zip
